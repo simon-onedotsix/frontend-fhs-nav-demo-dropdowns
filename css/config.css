@@ -1,0 +1,33 @@
+:root {
+
+    --brand-1: #251236;
+    --brand-2: #391c53;
+    --brand-3: #462264;
+
+    --bg: var(--brand-1);
+    --fg: white;
+
+    --ui-ease: cubic-bezier(.7, .1, .2, 1);
+    --ui-radius: 3rem;
+
+    --base-font-size: 1rem;
+    --base-line-height: 1.6;
+    --base-font-weight: 300;
+
+
+    --h1: calc(var(--base-font-size) * 5);
+    --h2: calc(var(--base-font-size) * 3.75);
+    --h3: calc(var(--base-font-size) * 2.5);
+    --h4: calc(var(--base-font-size) * 1.75);
+    --h5: calc(var(--base-font-size) * 1.25);
+    --h6: calc(var(--base-font-size) * 1);
+
+
+    --space-xxs: .5rem;
+    --space-xs: 1rem;
+    --space-sm: 2rem;
+    --space-md: 4rem;
+    --space-lg: 6rem;
+    --space-xl: 8rem;
+
+}

@@ -1,0 +1,218 @@
+:root {
+    --nav-radius: .5rem;
+    --nav-header-padding: 4.5rem;
+}
+
+
+
+
+
+/* TABLET + MOBILE */
+
+@media(max-width:1299px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        background-color: var(--brand-2);
+        padding: var(--nav-header-padding) var(--space-sm) var(--space-xs);
+    }
+
+    
+    .mainMenu {
+        position: fixed;
+        top: 0;
+        left: 100vw;
+        width: 50vw;
+        height: 100vh;
+        overflow-y: scroll;
+        
+        background-color: var(--brand-2);
+        transition: all 700ms var(--ui-ease);
+    }
+    .mainMenu.active {
+        left: 50vw;
+    }
+
+    .mainMenu ul {
+        padding: var(--nav-header-padding) var(--space-xs) var(--space-xs);
+    }
+
+    .mainMenu ul li {
+        cursor: default;
+        position: relative;
+        z-index: 1;
+        display: block;
+        
+        /* border: 1px solid magenta; */
+    }
+    
+    .mainMenu ul li ul {
+        position: relative;
+        z-index: 2;
+        width: max-content;
+        
+        display: grid;
+        grid-template-columns: 1fr;    
+        
+        pointer-events: none;
+        opacity: .1;
+        transition: all 450ms var(--ui-ease);
+        
+        padding: 0 0 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+    
+        /* border: 1px solid lime; */
+    }
+
+    .mainMenu ul li:hover ul {
+        pointer-events: all;
+        opacity: 1;
+
+        max-height: 100vh;
+    }
+    
+    .mainMenu ul li ul li {
+        display: block;
+    }
+
+    .mainMenu a,
+    .mainMenu span {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    .actions {
+        position: fixed;
+        top: var(--space-xs);
+        right: var(--space-xs);
+        left: var(--space-xs);
+
+        display: flex;
+        justify-content: flex-end;
+        gap: .5rem;
+    }
+
+    .toggle,
+    .closeButton {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        border: none;
+
+        background-color: var(--fg);
+        color: var(--bg);
+
+    }
+    .toggle {
+        z-index: 5;
+    }
+    .closeButton {
+        z-index: 10;
+    }
+
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:899px) {
+    .mainMenu {
+        left: 100vw;
+        width: 100vw;
+    }
+    .mainMenu.active {
+        left: 0vw;
+    }
+}
+
+
+/* DESKTOP */
+
+@media(min-width:1300px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        background-color: var(--brand-2);
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+
+    .mainMenu ul {
+        display: flex;
+        gap: .25rem;
+    
+        padding: 1rem;
+    }
+    
+    .mainMenu ul li {
+        cursor: default;
+        position: relative;
+        z-index: 1;
+        display: block;
+        
+        /* border: 1px solid magenta; */
+    }
+    
+    .mainMenu ul li ul {
+        position: absolute;
+        z-index: 2;
+        width: max-content;
+        
+        display: grid;
+        grid-template-columns: 1fr;    
+        
+        pointer-events: none;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+        
+        background-color: hsl(from var(--brand-2) h s calc(l + 5) / 1);
+        border-radius: var(--nav-radius);
+    
+        /* border: 1px solid lime; */
+    }
+    .mainMenu ul li:hover ul {
+        pointer-events: all;
+        opacity: 1;
+    }
+    
+    .mainMenu ul li ul li {
+        display: block;
+    }
+
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: .5rem;
+    }
+    
+    .toggle {
+        display: none;
+    }
+    
+    
+    .mainMenu a,
+    .mainMenu span {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: .25rem;
+    }
+    .mainMenu a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+

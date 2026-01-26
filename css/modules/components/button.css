@@ -1,0 +1,29 @@
+.button {
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--fg);
+    padding: .5rem 1rem;
+    
+    border: 1px solid var(--fg);
+    border-radius: var(--ui-radius);
+
+    color: var(--bg);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 400;
+
+    transition: all 200ms ease-in-out;
+}
+
+
+.button.inverse {
+    background-color: transparent;
+    color: var(--fg)
+}
+
+@media(hover:hover) {
+    .button:hover {
+        background-color: var(--fg);
+        color: var(--bg);
+    }
+}

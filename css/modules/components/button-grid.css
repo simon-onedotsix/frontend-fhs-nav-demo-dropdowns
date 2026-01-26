@@ -1,0 +1,19 @@
+@media(max-width:599px) {
+    .buttonGrid {
+        display: grid;
+        gap: .25rem;
+    }
+    .buttonGrid .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(min-width:600px) {
+    .buttonGrid {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,40 @@
+/*
+    --base-font-size
+*/
+
+.fs-xs {
+    font-size: calc(var(--base-font-size) * 0.75);
+}
+.fs-sm {
+    font-size: calc(var(--base-font-size) * 0.875);
+}
+.fs-base {
+    font-size: var(--base-font-size);
+}
+.fs-6, .h6 {
+    font-size: var(--h6);
+}
+.fs-5, .h5 {
+    font-size: var(--h5);
+}
+.fs-4, .h4 {
+    font-size: var(--h4);
+}
+.fs-3, .h3 {
+    font-size: var(--h3);
+}
+.fs-2, .h2 {
+    font-size: var(--h2);
+}
+.fs-1, .h1 {
+    font-size: var(--h1);
+}
+.fs-0 {
+    font-size: var(--h0);
+}
+.fs-lg {
+    font-size: calc(var(--base-font-size) * 2.75);
+}
+.fs-xl {
+    font-size: calc(var(--base-font-size) * 3.2);
+}

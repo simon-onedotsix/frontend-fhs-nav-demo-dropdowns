@@ -1,0 +1,33 @@
+.navSection, .navSection section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+
+.navSection .navLinks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+
+.navSection section .navLinks {
+    padding-left: 1rem;
+}
+
+.navLinks .button {
+    display: inline-block;
+    font-weight: 400;
+}
+
+.navLink {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: var(--base-line-height);
+}
+
+

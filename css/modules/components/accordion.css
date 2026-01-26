@@ -1,0 +1,33 @@
+.szh-accordion__item-heading {
+    color: inherit;
+    line-height: var(--base-line-height);
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+
+.szh-accordion__item-heading::after {
+    content: ' 	\0025BC';
+    font-weight: 600;
+    font-size: .75rem;
+}
+
+.szh-accordion__item-btn {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    line-height: var(--base-line-height);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+
+.szh-accordion__item-panel {
+    padding: .5rem 0 .5rem 1rem;
+}
+
+
+.szh-accordion__item--expanded .szh-accordion__item-heading::after {
+    content: ' \0025B2';
+}
