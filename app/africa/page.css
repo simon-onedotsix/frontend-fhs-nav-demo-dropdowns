@@ -1,0 +1,7 @@
+:root {
+    --brand-1: #FC4C02;
+    --brand-2: #3C1053;
+    --brand-3: #FFB600;
+
+    --bg: var(--brand-1);
+}

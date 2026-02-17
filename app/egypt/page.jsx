@@ -9,7 +9,7 @@ export default function Page() {
 		<>
 			<EventsBar />
 			
-			<Header site={`/world`} handle={`World`} />
+			<Header site={`/egypt`} handle={`Egypt`} />
 			
 			<Section>
 				<p className="h5 fw-400">Home page</p>

@@ -2,18 +2,16 @@ import { EventsBar } from "@/ui/eventsbar"
 import { Header } from "@/ui/header"
 import { Section } from "@/ui/section"
 
-import './page.css'
+import './layout.css'
 
-export default function Page() {
+export default function Layout({ children }) {
 	return (
 		<>
 			<EventsBar />
 			
-			<Header site={`/world`} handle={`World`} />
+			<Header site={`/sa/brf`} handle={`Saudi Arabia BRF`} />
 			
-			<Section>
-				<p className="h5 fw-400">Home page</p>
-			</Section>
+			{children}
 		</>
 	)
 }

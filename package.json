@@ -12,7 +12,12 @@
     "@szhsin/react-accordion": "^1.4.1",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "html-react-parser": "^5.2.8",
+    "lenis": "^1.3.14",
+    "lodash": "^4.17.21",
+    "motion": "^12.23.24",
+    "motion-plus": "https://api.motion.dev/registry.tgz?package=motion-plus&version=2.0.2&token=6ccee797b95a6e1fe024bfdb6622b843482745837e7c089ba58065777af8fcac"
   },
   "devDependencies": {
     "eslint": "^9",

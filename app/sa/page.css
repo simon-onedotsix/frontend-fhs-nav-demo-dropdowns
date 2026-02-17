@@ -1,0 +1,7 @@
+:root {
+    --brand-1: #391c53;
+    --brand-2: #dfa46e;
+    --brand-3: #00744b;
+
+    --bg: hsl(from var(--brand-3) h s calc( l - 10 ) / 1);
+}

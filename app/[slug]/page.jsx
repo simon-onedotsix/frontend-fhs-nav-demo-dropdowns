@@ -9,10 +9,7 @@ export default function Page() {
                   <GlobalHeader />
 
                   <Section>
-
-                        <br />
-                        <br />
-                        <p className="h5 fw-400">Content page</p>
+                  <p className="h5 fw-400">Content page</p>
                   </Section>
 		</>
 	)

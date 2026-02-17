@@ -9,6 +9,7 @@ export default function Home() {
 
 			<GlobalHeader />
 
+			
 
 			<div style={{ display: `flex`, justifyContent: `center`, paddingTop: `5rem` }}>
 				<div style={{ display: `inline-flex`, flexDirection: `column`, gap: 20 }}>
@@ -33,6 +34,7 @@ export default function Home() {
 
 				</div>
 			</div>
+
 
 		</>
 	)

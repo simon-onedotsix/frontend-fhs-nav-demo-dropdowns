@@ -1,10 +1,15 @@
 :root {
     --nav-radius: .5rem;
     --nav-header-padding: 4.5rem;
+
+    --header-bg: hsl(from var(--bg) h s calc( l + 0 ) / 1);
 }
 
 
 
+.header {
+    border-bottom: 1px solid hsl(from var(--bg) h s calc( l + 6 ) / 1);
+}
 
 
 /* TABLET + MOBILE */
@@ -17,8 +22,8 @@
         align-items: center;
         gap: 2rem;
 
-        background-color: var(--brand-2);
-        padding: var(--nav-header-padding) var(--space-sm) var(--space-xs);
+        background-color: var(--header-bg);
+        padding: var(--space-xs);
     }
 
     
@@ -30,7 +35,7 @@
         height: 100vh;
         overflow-y: scroll;
         
-        background-color: var(--brand-2);
+        background-color: var(--bg);
         transition: all 700ms var(--ui-ease);
     }
     .mainMenu.active {
@@ -146,7 +151,7 @@
         align-items: center;
         gap: 2rem;
 
-        background-color: var(--brand-2);
+        background-color: var(--header-bg);
         padding: var(--space-xs) var(--space-sm);
     }
 
@@ -179,7 +184,7 @@
         opacity: 0;
         transition: all 250ms ease-in-out;
         
-        background-color: hsl(from var(--brand-2) h s calc(l + 5) / 1);
+        background-color: hsl(from var(--bg) h s calc(l + 6) / 1);
         border-radius: var(--nav-radius);
     
         /* border: 1px solid lime; */

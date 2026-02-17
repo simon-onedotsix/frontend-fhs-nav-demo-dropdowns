@@ -2,19 +2,28 @@
 
 import { useState } from "react"
 
+import Link from "next/link"
+
 import { SlideOut } from "@/ui/slideout"
+import { FhsLockup } from "./brand/fhs-brand"
 
 export const GlobalHeader = () => {
 
-    const [accountActive, setAccountActive] = useState(false)
     const [navActive, setNavActive] = useState(false)
+    const [accountActive, setAccountActive] = useState(false)
 
 
     return (
         <>
             <header className="header">
                 <section>
-                    <a className="h4" href="/">FHS</a>
+                    <Link href="/">
+                        <FhsLockup
+                            leftColor={`var(--fg)`}
+                            topColor={`var(--brand-3)`}
+                            bottomColor={`var(--brand-2)`}
+                        />
+                    </Link>
                 </section>
 
                 <section className={`mainMenu ${navActive && 'active'}`}>

@@ -1,3 +1,5 @@
+import { ReactLenis, useLenis } from 'lenis/react'
+
 import { Geist, Geist_Mono } from "next/font/google"
 
 const geistSans = Geist({
@@ -19,10 +21,12 @@ import '@/css/index.css'
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				{children}
-			</body>
-		</html>
+		<ReactLenis root>
+			<html lang="en">
+				<body className={`${geistSans.variable} ${geistMono.variable}`}>
+					{children}
+				</body>
+			</html>
+		</ReactLenis>
 	)
 }

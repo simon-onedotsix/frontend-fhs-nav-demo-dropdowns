@@ -6,13 +6,10 @@ export default function Page() {
 	return (
             <>
                   <EventsBar/>
-                  <Header site={`africa`} handle={`FHS Africa`} />
+                  <Header site={`africa`} handle={`Africa`} />
 
                   <Section>
-                        <br />
-                        <br />
-                        <p className="h5 fw-400">Content page</p>
-                              
+                        <p className="h5 fw-400">Content page</p>   
                   </Section>
 		</>
 	)
