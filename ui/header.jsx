@@ -38,6 +38,7 @@ export const Header = ({ site, handle = 'FHS' }) => {
                                 <li><a href={`${site && `${site}`}/page`}>Networking</a></li>
                                 <li><a href={`${site && `${site}`}/page`}>Sustainability</a></li>
                                 <li><a href={`${site && `${site}`}/page`}>Travel Guide</a></li>
+                                <li><a href={`${site && `${site}`}/page`}>Contact Us</a></li>
                             </ul>
                         </li>
                         <li><span>Programme<Chevron/></span>
@@ -72,12 +73,12 @@ export const Header = ({ site, handle = 'FHS' }) => {
                             </ul>
                         </li>
                         <li><a href={`${site && `${site}`}/page`}>Content Library</a></li>
-                        <li><a href={`${site && `${site}`}/page`}>Contact Us</a></li>
                     </ul>
                 </section>
 
                 <section className="actions">
                     <button className="button">Register</button>
+                    <button className="button">Become a Partner</button>
                     <button className="button inverse" onClick={setAccountActive}>LOG-IN</button>
                     <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
                 </section>
