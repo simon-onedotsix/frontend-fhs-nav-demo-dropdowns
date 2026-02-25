@@ -250,6 +250,14 @@
     .mainMenu ul li ul li {
         display: block;
     }
+    .mainMenu ul li ul li ul {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;   
+        padding: .25rem 0 0 1rem;
+    }
+
+
 
 
     .toggleWrapper {
@@ -264,6 +272,7 @@
     
     
     .mainMenu a,
+    .mainMenu p,
     .mainMenu span {
         display: inline-block;
         padding: 5px 10px;

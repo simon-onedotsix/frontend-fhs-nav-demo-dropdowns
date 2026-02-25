@@ -1,17 +1,41 @@
 'use client'
 
-import { useState } from "react"
+import { useState, Fragment } from "react"
 
 import Link from "next/link"
 
 import { FhsLockup } from "./brand/fhs-brand"
 import { SlideOut } from "@/ui/slideout"
 
-export const Header = ({ site, handle = 'FHS' }) => {
+export const Header = ({ site, handle = 'FHS', mainMenu }) => {
 
     const [navActive, setNavActive] = useState(false)
     const [accountActive, setAccountActive] = useState(false)
 
+    // console.log(mainMenu)
+
+
+
+    const handleMenuItem = ( item ) => {
+
+        switch (item.__typename) {
+            case "navigation_Entry":
+                return <li key={item.id}><a href={item.navUrl}>{item.title}</a></li>
+                break
+            
+            case "section_Entry":
+                return <li key={item.id}><span>{item.title}<Chevron/></span></li>
+                break
+            
+            case "heading_Entry":
+                return <li key={item.id}><p>{item.title}</p></li>
+                break
+        
+            default:
+                break
+        }
+    }
+    
     
     return (
         <header>
@@ -31,49 +55,37 @@ export const Header = ({ site, handle = 'FHS' }) => {
                 <section className={`mainMenu ${navActive && 'active'}`}>
                     <ul>
                         <li className="deviceOnly"><a href={`${site && `${site}`}/`}>Home</a></li>
-                        <li><span>About<Chevron/></span>
-                            <ul>
-                                <li><a href={`${site && `${site}`}/page`}>About Us</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Investors</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Why Attend</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Networking</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Sustainability</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Travel Guide</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Contact Us</a></li>
-                            </ul>
-                        </li>
-                        <li><span>Programme<Chevron/></span>
-                            <ul>
-                                <li><a href={`${site && `${site}`}/page`}>Agenda</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Themes</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Speakers</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Advisory Board</a></li>
-                            </ul>
-                        </li>
-                        <li><span>Event Features<Chevron/></span>
-                            <ul>
-                                <li><p>FHS Pitch Sessions</p></li>
-                                <li><a href={`${site && `${site}`}/page`}>Startup Den</a></li>
-                                <li><p>Awards</p></li>
-                                <li><a href={`${site && `${site}`}/page`}>Future Leader Award</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Impact Leader Award</a></li>
-                                <li><p>Experiences</p></li>
-                                <li><a href={`${site && `${site}`}/page`}>Curated Connections</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Networking Receptions</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Tour Experiences</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Sports &amp; Wellness</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>FHSWomenPower</a></li>
-                            </ul>
-                        </li>
-                        <li><span>Sponsorship<Chevron/></span>
-                            <ul>
-                                <li><a href={`${site && `${site}`}/page`}>Sponsors &amp; Partners</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Why Sponsor?</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>Floor Plan</a></li>
-                                <li><a href={`${site && `${site}`}/page`}>3D Virtual Tour</a></li>
-                            </ul>
-                        </li>
-                        <li><a href={`${site && `${site}`}/page`}>Content Library</a></li>
+
+                        {
+                            mainMenu?.map(item => {
+                                if (item.children.length) {
+                                    //level 1
+                                    return (
+                                        <li key={item.id}>
+                                            <span>{item.title}<Chevron /></span>
+                                            <ul>
+                                                {
+                                                    item.children.map(child => {
+                                                        // level 2
+                                                        if (child.children?.length) {
+                                                            return (
+                                                                <li key={child.id}><p>{child.title}</p>
+                                                                    <ul>
+                                                                        { child.children?.map(subItem => handleMenuItem(subItem)) }
+                                                                    </ul>
+                                                                </li>
+                                                            )
+                                                        }
+                                                        return handleMenuItem(child)
+                                                    })
+                                                }
+                                            </ul>
+                                        </li>
+                                    )
+                                }
+                                return handleMenuItem(item)
+                            })
+                        }
                     </ul>
 
                     <section className="actions">
