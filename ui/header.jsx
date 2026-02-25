@@ -30,6 +30,7 @@ export const Header = ({ site, handle = 'FHS' }) => {
 
                 <section className={`mainMenu ${navActive && 'active'}`}>
                     <ul>
+                        <li className="deviceOnly"><a href={`${site && `${site}`}/`}>Home</a></li>
                         <li><span>About<Chevron/></span>
                             <ul>
                                 <li><a href={`${site && `${site}`}/page`}>About Us</a></li>
@@ -51,12 +52,12 @@ export const Header = ({ site, handle = 'FHS' }) => {
                         </li>
                         <li><span>Event Features<Chevron/></span>
                             <ul>
-                                <li className="fw-600">FHS Pitch Sessions</li>
+                                <li><p>FHS Pitch Sessions</p></li>
                                 <li><a href={`${site && `${site}`}/page`}>Startup Den</a></li>
-                                <li className="fw-600">Awards</li>
+                                <li><p>Awards</p></li>
                                 <li><a href={`${site && `${site}`}/page`}>Future Leader Award</a></li>
                                 <li><a href={`${site && `${site}`}/page`}>Impact Leader Award</a></li>
-                                <li className="fw-600">Experiences</li>
+                                <li><p>Experiences</p></li>
                                 <li><a href={`${site && `${site}`}/page`}>Curated Connections</a></li>
                                 <li><a href={`${site && `${site}`}/page`}>Networking Receptions</a></li>
                                 <li><a href={`${site && `${site}`}/page`}>Tour Experiences</a></li>
@@ -74,14 +75,15 @@ export const Header = ({ site, handle = 'FHS' }) => {
                         </li>
                         <li><a href={`${site && `${site}`}/page`}>Content Library</a></li>
                     </ul>
+
+                    <section className="actions">
+                        <button className="button">Register Here</button>
+                        <button className="button">Become a Partner</button>
+                        <button className="button inverse" onClick={setAccountActive}>Log-in</button>
+                    </section>
                 </section>
 
-                <section className="actions">
-                    <button className="button">Register</button>
-                    <button className="button">Become a Partner</button>
-                    <button className="button inverse" onClick={setAccountActive}>LOG-IN</button>
-                    <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
-                </section>
+                <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
             </nav>
 
 

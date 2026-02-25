@@ -2,7 +2,7 @@
     display: inline-block;
     cursor: pointer;
     background-color: var(--fg);
-    padding: .5rem 1rem;
+    padding: .5rem 1.25rem;
     
     border: 1px solid var(--fg);
     border-radius: var(--ui-radius);
@@ -10,7 +10,7 @@
     color: var(--bg);
     font-size: inherit;
     font-family: inherit;
-    font-weight: 400;
+    font-weight: 600;
 
     transition: all 200ms ease-in-out;
 }

@@ -12,6 +12,23 @@
 }
 
 
+.mainMenu a {
+    font-weight: 400;
+}
+.mainMenu ul li ul a {
+    font-weight: 200;
+}
+.mainMenu p {
+    font-weight: 500;
+    color: var(--brand-2);
+}
+.mainMenu span,
+.mainMenu .deviceOnly {
+    font-weight: 400;
+}
+
+
+
 /* TABLET + MOBILE */
 
 @media(max-width:1299px) {
@@ -36,14 +53,27 @@
         overflow-y: scroll;
         
         background-color: var(--bg);
-        transition: all 700ms var(--ui-ease);
+        transition: all 400ms var(--ui-ease);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .mainMenu.active {
         left: 50vw;
     }
 
+    .mainMenu .actions {
+        padding: var(--space-sm);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .mainMenu ul {
-        padding: var(--nav-header-padding) var(--space-xs) var(--space-xs);
+        padding: var(--space-sm);
+        display: flex;
+        flex-direction: column;
     }
 
     .mainMenu ul li {
@@ -51,8 +81,6 @@
         position: relative;
         z-index: 1;
         display: block;
-        
-        /* border: 1px solid magenta; */
     }
     
     .mainMenu ul li ul {
@@ -67,11 +95,9 @@
         opacity: .1;
         transition: all 450ms var(--ui-ease);
         
-        padding: 0 0 0 1rem;
+        padding: 0;
         max-height: 0;
         overflow: hidden;
-    
-        /* border: 1px solid lime; */
     }
 
     .mainMenu ul li:hover ul {
@@ -85,13 +111,25 @@
         display: block;
     }
 
+
+    /* button spacing */
+
     .mainMenu a,
+    .mainMenu p,
     .mainMenu span {
         display: inline-block;
-        padding: 5px 10px;
+        padding: .5rem 0;
+    }
+    .mainMenu ul li ul {
+        padding-left: 1rem;
+    }
+    .mainMenu ul li ul a {
+        padding-left: 1rem;
     }
 
-    .actions {
+
+
+    .toggleWrapper {
         position: fixed;
         top: var(--space-xs);
         right: var(--space-xs);
@@ -130,7 +168,7 @@
 
 /* MOBILE */
 
-@media(max-width:899px) {
+@media(max-width:599px) {
     .mainMenu {
         left: 100vw;
         width: 100vw;
@@ -145,14 +183,29 @@
 
 @media(min-width:1300px) {
 
+    .deviceOnly {
+        display: none !important;
+    }
+
     .header {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: auto 1fr;
         align-items: center;
         gap: 2rem;
 
         background-color: var(--header-bg);
         padding: var(--space-xs) var(--space-sm);
+    }
+
+    .mainMenu {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    .actions {
+        display: flex;
+        gap: .5rem;
     }
 
 
@@ -199,7 +252,7 @@
     }
 
 
-    .actions {
+    .toggleWrapper {
         display: flex;
         justify-content: flex-end;
         gap: .5rem;

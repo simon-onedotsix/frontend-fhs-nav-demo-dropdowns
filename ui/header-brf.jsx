@@ -30,13 +30,14 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
                         <li><a href={`${site && `${site}`}/page`}>Agenda</a></li>
                         <li><a href={`${site && `${site}`}/page`}>Partners</a></li>
                     </ul>
+
+                    <section className="actions">
+                        <button className="button">Register</button>
+                        <button className="button inverse" onClick={setAccountActive}>Log-in</button>
+                    </section>
                 </section>
 
-                <section className="actions">
-                    <button className="button">Register</button>
-                    <button className="button inverse" onClick={setAccountActive}>LOG-IN</button>
-                    <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
-                </section>
+                <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
             </nav>
 
 

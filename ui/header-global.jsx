@@ -40,12 +40,13 @@ export const GlobalHeader = () => {
                         <li><a href={`/page`}>FHS Club</a></li>
                         <li><a href={`/page`}>Contact Us</a></li>
                     </ul>
+                    
+                    <section className="actions">
+                        <button className="button inverse" onClick={setAccountActive}>LOG-IN</button>
+                    </section>
                 </section>
 
-                <section className="actions">
-                    <button className="button inverse" onClick={setAccountActive}>LOG-IN</button>
-                    <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
-                </section>
+                <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
             </header>
 
             <SlideOut active={accountActive} setActive={setAccountActive}>
