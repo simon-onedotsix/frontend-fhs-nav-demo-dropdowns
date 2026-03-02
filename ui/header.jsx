@@ -4,10 +4,11 @@ import { useState, Fragment } from "react"
 
 import Link from "next/link"
 
-import { FhsLockup } from "./brand/fhs-brand"
+import { FhsLockup } from "@/ui/brand/fhs-brand"
+import { Chevron } from "@/ui/chevron"
 import { SlideOut } from "@/ui/slideout"
 
-export const Header = ({ site, handle = 'FHS', mainMenu }) => {
+export const Header = ({ site, handle, mainMenu }) => {
 
     const [navActive, setNavActive] = useState(false)
     const [accountActive, setAccountActive] = useState(false)
@@ -27,7 +28,7 @@ export const Header = ({ site, handle = 'FHS', mainMenu }) => {
                 return <li key={item.id}><span>{item.title}<Chevron/></span></li>
                 break
             
-            case "heading_Entry":
+            case "subsection_Entry":
                 return <li key={item.id}><p>{item.title}</p></li>
                 break
         
@@ -140,5 +141,3 @@ export const Header = ({ site, handle = 'FHS', mainMenu }) => {
         </header>
     )
 }
-
-const Chevron = () => <img src="/dropdown-chevron.svg" alt="" style={{ display: `inline-block`, width: 16, height: 10 }} />

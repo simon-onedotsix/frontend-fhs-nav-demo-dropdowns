@@ -7,9 +7,16 @@ import { Section } from "@/ui/section"
 
 import '../page.css'
 
+
+// static nav
+import { FHS_WORLD as nav } from '@/fixtures/nav'
+
+
+
 export default async function Layout({ children }) {
 
-	const nav = await fetchNavigation("fhsWorld")
+	// const nav = await fetchNavigation("fhsWorld")
+	// console.log('nav:', nav)
 	
 	return (
 		<>

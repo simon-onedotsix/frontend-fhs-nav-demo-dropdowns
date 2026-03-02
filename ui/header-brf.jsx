@@ -5,6 +5,7 @@ import { useState } from "react"
 import Link from "next/link"
 
 import { BrfLockup } from "./brand/brf-brand"
+import { Chevron } from "@/ui/chevron"
 import { SlideOut } from "@/ui/slideout"
 
 export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 'FHS' }) => {
@@ -25,7 +26,7 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
 
                 <section className={`mainMenu ${navActive && 'active'}`}>
                     <ul>
-                        <li><a href={parentSite}>&larr; {parentHandle}</a></li>
+                        <li><a href={parentSite}><Chevron direction={'left'} /> {parentHandle}</a></li>
                         <li><a href={`${site && `${site}`}/`}>About</a></li>
                         <li><a href={`${site && `${site}`}/page`}>Agenda</a></li>
                         <li><a href={`${site && `${site}`}/page`}>Partners</a></li>
@@ -82,5 +83,3 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
         </header>
     )
 }
-
-const Chevron = () => <img src="/dropdown-chevron.svg" alt="" style={{ display: `inline-block`, width: 16, height: 10 }} />

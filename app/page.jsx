@@ -1,13 +1,23 @@
-import { EventsBar } from "@/ui/eventsbar"
-import { GlobalHeader } from "@/ui/header-global"
+import fetchNavigation from '@/lib/cms/fetchNavigation'
 
-export default function Home() {
+import { EventsBar } from "@/ui/eventsbar"
+import { Header } from "@/ui/header"
+
+// static nav
+import { FHS as nav } from '@/fixtures/nav'
+
+export default async function Page() {
+
+	// dunamic nav (disabled for dev demo)
+	// const nav = await fetchNavigation("fhs")
+	// console.log('nav:', nav)
+	
 
 	return (
 		<>
 			<EventsBar />
 
-			<GlobalHeader />
+			<Header site={`/`} mainMenu={nav.data.entries} />
 
 			
 
