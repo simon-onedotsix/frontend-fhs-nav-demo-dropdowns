@@ -4,7 +4,10 @@ import { useState } from "react"
 
 import Link from "next/link"
 
-import { BrfLockup } from "./brand/brf-brand"
+import { handleMenuItem } from "@/lib/utils/handleMenuItem"
+
+import { MenuToggle } from "@/ui/components/menu-toggle"
+import { BrfLockup } from "@/ui/brand/brf-brand"
 import { Chevron } from "@/ui/chevron"
 import { SlideOut } from "@/ui/slideout"
 
@@ -38,7 +41,8 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
                     </section>
                 </section>
 
-                <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
+                {/* toggle button */}
+                <button className="toggle" onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
             </nav>
 
 

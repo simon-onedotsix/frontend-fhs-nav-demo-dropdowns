@@ -4,39 +4,20 @@ import { useState, Fragment } from "react"
 
 import Link from "next/link"
 
+import { handleMenuItem } from "@/lib/utils/handleMenuItem"
+
+import { MenuToggle } from "@/ui/components/menu-toggle"
 import { FhsLockup } from "@/ui/brand/fhs-brand"
 import { Chevron } from "@/ui/chevron"
 import { SlideOut } from "@/ui/slideout"
 
-export const Header = ({ site, handle, mainMenu }) => {
+export const Header = ({ site, handle, mainMenu, ctas }) => {
 
     const [navActive, setNavActive] = useState(false)
     const [accountActive, setAccountActive] = useState(false)
 
     // console.log(mainMenu)
-
-
-
-    const handleMenuItem = ( item ) => {
-
-        switch (item.__typename) {
-            case "navigation_Entry":
-                return <li key={item.id}><a href={item.navUrl}>{item.title}</a></li>
-                break
-            
-            case "section_Entry":
-                return <li key={item.id}><span>{item.title}<Chevron/></span></li>
-                break
-            
-            case "subsection_Entry":
-                return <li key={item.id}><p>{item.title}</p></li>
-                break
-        
-            default:
-                break
-        }
-    }
-    
+   
     
     return (
         <header>
@@ -55,7 +36,7 @@ export const Header = ({ site, handle, mainMenu }) => {
 
                 <section className={`mainMenu ${navActive && 'active'}`}>
                     <ul>
-                        <li className="deviceOnly"><a href={`${site && `${site}`}/`}>Home</a></li>
+                        <li className="deviceOnly"><Link href={`${site && `${site}`}/`}>Home</Link></li>
 
                         {
                             mainMenu?.map(item => {
@@ -90,13 +71,17 @@ export const Header = ({ site, handle, mainMenu }) => {
                     </ul>
 
                     <section className="actions">
-                        <button className="button">Register Here</button>
-                        <button className="button">Become a Partner</button>
+                        {
+                            ctas?.map((cta, index) => (
+                                <Link key={index} href={cta.hyperlink} className="button">{cta.label}</Link>
+                            ))
+                        }
                         <button className="button inverse" onClick={setAccountActive}>Log-in</button>
                     </section>
                 </section>
 
-                <button className="toggle" onClick={() => setNavActive(!navActive)}> = </button>
+                {/* toggle button */}
+                <button className="toggle" onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
             </nav>
 
 
@@ -106,7 +91,7 @@ export const Header = ({ site, handle, mainMenu }) => {
                 <div style={{ display: `flex`, flexDirection: `column`, justifyContent: `space-between`, height: `100%` }}>
 
                     <div className="navSection formatted">
-                        <a className="h4" href="/world">Account</a>
+                        <Link className="h4" href="/world">Account</Link>
                         <br />
                         <form action="" className="form">
                             <div className='formRow'>
@@ -130,8 +115,8 @@ export const Header = ({ site, handle, mainMenu }) => {
                     </div>
 
                     <div className="navSection">
-                        <a href="#">Forgot password</a>
-                        <a href="#">About FHS Club membership</a>
+                        <Link href="#">Forgot password</Link>
+                        <Link href="#">About FHS Club membership</Link>
                     </div>
                     
                 </div>

@@ -7,18 +7,23 @@ import { Header } from "@/ui/header"
 import '../page.css'
 
 // static nav
-import { FHS_SA as nav } from '@/fixtures/nav'
+// import { FHS_SA as header } from '@/fixtures/nav'
 
-export default async function Layout({ children }) {
+export default async function Page({ children }) {
 
-	// const nav = await fetchNavigation("fhsSaudiArabia")
-	// console.log('nav:', nav)
+	  const header = await fetchNavigation("fhsSaudiArabia")
+	//   console.log('nav:', header)
 	
 	return (
 		<>
 			<EventsBar />
 			
-			<Header site={`/sa`} handle={`Saudi Arabia`} mainMenu={nav.data.entries} />
+			<Header
+				site={`/sa`}
+				handle={`Saudi Arabia`}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 			
 			{children}
 		</>

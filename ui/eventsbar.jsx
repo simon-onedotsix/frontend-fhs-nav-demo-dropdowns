@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+import { Chevron } from './chevron'
+
 
 import CSS from './eventsbar.module.css'
 
@@ -14,7 +16,7 @@ export const EventsBar = () => {
         <div className={`${CSS.layout} ${active && CSS.active}`}>
             <section className={CSS.header}>
                 <p>Brought to you by <a href="#">The Bench</a></p>
-                <button className={CSS.toggle} onClick={() => setActive(!active)}>x</button>
+                <button className={CSS.toggle} onClick={() => setActive(!active)}><Chevron direction={ active ? 'up' : 'down'} /></button>
             </section>
 
             <section className={CSS.content}>
