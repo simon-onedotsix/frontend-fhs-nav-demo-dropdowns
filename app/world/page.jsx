@@ -8,12 +8,12 @@ import './page.css'
 
 
 // static nav
-// import { FHS_WORLD as header } from '@/fixtures/nav'
+import { FHS_WORLD as header } from '@/fixtures/nav'
 
 
 export default async function Page() {
 
-	const header = await fetchNavigation("fhsWorld")
+	// const header = await fetchNavigation("fhsWorld")
 	// console.log('nav:', header)
 
 	return (

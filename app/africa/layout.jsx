@@ -6,11 +6,11 @@ import { Header } from "@/ui/header"
 
 import './page.css'
 
-// import { FHS_AFRICA as header } from '@/fixtures/nav'
+import { FHS_AFRICA as header } from '@/fixtures/nav'
 
 export default async function Layout({ children }) {
 
-	const header = await fetchNavigation("fhsAfrica")
+	// const header = await fetchNavigation("fhsAfrica")
 	// console.log('header:', header)
 	
 	return (

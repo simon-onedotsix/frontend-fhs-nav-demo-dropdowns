@@ -6,11 +6,11 @@ import { Section } from "@/ui/section"
 
 import '../page.css'
 
-// import { FHS_EGYPT as header } from '@/fixtures/nav'
+import { FHS_EGYPT as header } from '@/fixtures/nav'
 
 export default async function Layout({ children }) {
 
-	const header = await fetchNavigation("fhsEgypt")
+	// const header = await fetchNavigation("fhsEgypt")
 
 	return (
 		<>

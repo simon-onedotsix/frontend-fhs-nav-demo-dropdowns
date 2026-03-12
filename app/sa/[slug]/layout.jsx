@@ -7,11 +7,11 @@ import { Header } from "@/ui/header"
 import '../page.css'
 
 // static nav
-// import { FHS_SA as header } from '@/fixtures/nav'
+import { FHS_SA as header } from '@/fixtures/nav'
 
 export default async function Page({ children }) {
 
-	  const header = await fetchNavigation("fhsSaudiArabia")
+	//   const header = await fetchNavigation("fhsSaudiArabia")
 	//   console.log('nav:', header)
 	
 	return (
