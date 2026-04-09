@@ -9,7 +9,12 @@ import { handleMenuItem } from "@/lib/utils/handleMenuItem"
 import { MenuToggle } from "@/ui/components/menu-toggle"
 import { BrfLockup } from "@/ui/brand/brf-brand"
 import { Chevron } from "@/ui/chevron"
-import { SlideOut } from "@/ui/slideout"
+import { SlideOut } from "@/ui/modules/slideout"
+import { Button } from "../buttons/button"
+
+
+import CSS from './header.module.css'
+
 
 export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 'FHS' }) => {
 
@@ -20,14 +25,14 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
     return (
         <header>
 
-            <nav className="header">
+            <nav className={CSS.header}>
                 <section>
                     <Link href={site ? `${site}` : `/`}>
                         <BrfLockup region={handle} />
                     </Link>
                 </section>
 
-                <section className={`mainMenu ${navActive && 'active'}`}>
+                <section className={`${CSS.mainMenu} ${navActive && CSS.active}`}>
                     <ul>
                         <li><a href={parentSite}><Chevron direction={'left'} /> {parentHandle}</a></li>
                         <li><a href={`${site && `${site}`}/`}>About</a></li>
@@ -35,14 +40,14 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
                         <li><a href={`${site && `${site}`}/page`}>Partners</a></li>
                     </ul>
 
-                    <section className="actions">
-                        <button className="button">Register</button>
-                        <button className="button inverse" onClick={setAccountActive}>Log-in</button>
+                    <section className={CSS.actions}>
+                        <Button label={`Register`} />
+                        <div onClick={setAccountActive}><Button fake outline label={`Log-in`} /></div>
                     </section>
                 </section>
 
                 {/* toggle button */}
-                <button className="toggle" onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
+                <button className={CSS.toggle} onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
             </nav>
 
 

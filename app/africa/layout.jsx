@@ -1,8 +1,8 @@
 import fetchNavigation from '@/lib/cms/fetchNavigation'
 
 
-import { EventsBar } from "@/ui/eventsbar"
-import { Header } from "@/ui/header"
+import { EventsBar } from "@/ui/site/eventsbar"
+import { Header } from "@/ui/site/header"
 
 import './page.css'
 
@@ -15,7 +15,7 @@ export default async function Layout({ children }) {
 	
 	return (
 		<>
-			<EventsBar />
+			<EventsBar site={`/africa`} />
 			
 			<Header
 				site={`/africa`}

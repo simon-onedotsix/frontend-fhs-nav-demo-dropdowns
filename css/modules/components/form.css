@@ -34,6 +34,33 @@
 }
 
 
+.button[type='submit'] {
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--fg);
+    padding: .75rem 1.5rem;
+    
+    border: 1px solid var(--fg);
+    border-radius: var(--ui-radius);
+
+    color: var(--bg);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 650;
+
+    transition: all 200ms ease-in-out;
+
+}
+
+@media(hover:hover){
+    .button[type='submit']:hover {
+        background-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        border-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        color: var(--fg);
+    }
+}
+
+
 
 
 /* auto-complete text color */
@@ -69,3 +96,8 @@ form input:-webkit-autofill{
     0% { transform: rotate(0deg);}
     100% { transform: rotate(360deg);}
 }
+
+
+
+
+

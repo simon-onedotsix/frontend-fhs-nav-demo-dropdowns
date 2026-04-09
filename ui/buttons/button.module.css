@@ -1,0 +1,57 @@
+.ui {
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--fg);
+    padding: .75rem 1.5rem;
+    
+    border: 1px solid var(--fg);
+    border-radius: var(--ui-radius);
+
+    color: var(--bg);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 650;
+
+    transition: all 200ms ease-in-out;
+
+}
+
+.outline {
+    background-color: transparent;
+
+    color: var(--fg);
+}
+
+
+@media(hover:hover){
+    .ui:hover {
+        background-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        border-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        color: var(--fg);
+    }
+}
+
+
+
+
+/* button grid */
+
+@media(max-width:599px) {
+    .grid {
+        display: grid;
+        gap: .25rem;
+    }
+    .grid .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(min-width:600px) {
+    .grid {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+        flex-wrap: wrap;
+    }
+}

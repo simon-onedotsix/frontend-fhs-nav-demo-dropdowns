@@ -1,12 +1,12 @@
-import { EventsBar } from "@/ui/eventsbar"
-import { HeaderBRF } from "@/ui/header-brf"
+import { EventsBar } from "@/ui/site/eventsbar"
+import { HeaderBRF } from "@/ui/site/header-brf"
 
 import './layout.css'
 
 export default function Layout({ children }) {
 	return (
 		<>
-			<EventsBar />
+			<EventsBar site={`/egypt/brf`} />
 			
 			<HeaderBRF site={`/egypt/brf`} parentSite={`/egypt`} handle={`At FHS Egypt`} parentHandle={`FHS Egypt`} />
 			

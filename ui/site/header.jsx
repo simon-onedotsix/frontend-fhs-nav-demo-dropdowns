@@ -9,7 +9,11 @@ import { handleMenuItem } from "@/lib/utils/handleMenuItem"
 import { MenuToggle } from "@/ui/components/menu-toggle"
 import { FhsLockup } from "@/ui/brand/fhs-brand"
 import { Chevron } from "@/ui/chevron"
-import { SlideOut } from "@/ui/slideout"
+import { SlideOut } from "@/ui/modules/slideout"
+import { Button } from "@/ui/buttons/button"
+
+
+import CSS from './header.module.css'
 
 export const Header = ({ site, handle, mainMenu, ctas }) => {
 
@@ -22,7 +26,7 @@ export const Header = ({ site, handle, mainMenu, ctas }) => {
     return (
         <header>
 
-            <nav className="header">
+            <nav className={CSS.header}>
                 <section>
                     <Link href={site ? `${site}` : `/`}>
                         <FhsLockup
@@ -34,21 +38,21 @@ export const Header = ({ site, handle, mainMenu, ctas }) => {
                     </Link>
                 </section>
 
-                <section className={`mainMenu ${navActive && 'active'}`}>
+                <section className={`${CSS.mainMenu} ${navActive && CSS.active}`}>
                     <ul>
-                        <li className="deviceOnly"><Link href={`${site && `${site}`}/`}>Home</Link></li>
+                        <li className={CSS.deviceOnly}><Link href={`${site && `${site}`}/`}>Home</Link></li>
 
                         {
                             mainMenu?.map(item => {
                                 if (item.children.length) {
-                                    //level 1
+                                    // level-1
                                     return (
                                         <li key={item.id}>
-                                            <span>{item.title}<Chevron /></span>
+                                            <span className={CSS.title}>{item.title}<Chevron /></span>
                                             <ul>
                                                 {
                                                     item.children.map(child => {
-                                                        // level 2
+                                                        // level-2
                                                         if (child.children?.length) {
                                                             return (
                                                                 <li key={child.id}><p>{child.title}</p>
@@ -65,28 +69,34 @@ export const Header = ({ site, handle, mainMenu, ctas }) => {
                                         </li>
                                     )
                                 }
+                                // level-1
                                 return handleMenuItem(item)
                             })
                         }
                     </ul>
 
-                    <section className="actions">
+                    <section className={CSS.actions}>
                         {
                             ctas?.map((cta, index) => (
-                                <Link key={index} href={cta.hyperlink} className="button">{cta.label}</Link>
+                                <Button
+                                    key={index}
+                                    href={cta.hyperlink}
+                                    label={cta.label}
+                                    target={cta.openInNewWindow}
+                                />
                             ))
                         }
-                        <button className="button inverse" onClick={setAccountActive}>Log-in</button>
+                        <span onClick={setAccountActive}><Button fake outline label={`Log-in`} /></span>
                     </section>
                 </section>
 
-                {/* toggle button */}
-                <button className="toggle" onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
+                {/* mobile toggle button */}
+                <button className={CSS.toggle} onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
             </nav>
 
 
-            {/* account */}
             
+            {/* account */}
             <SlideOut active={accountActive} setActive={setAccountActive}>
                 <div style={{ display: `flex`, flexDirection: `column`, justifyContent: `space-between`, height: `100%` }}>
 

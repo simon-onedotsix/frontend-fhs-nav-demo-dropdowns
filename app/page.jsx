@@ -1,7 +1,7 @@
 import fetchNavigation from '@/lib/cms/fetchNavigation'
 
-import { EventsBar } from "@/ui/eventsbar"
-import { Header } from "@/ui/header"
+import { EventsBar } from "@/ui/site/eventsbar"
+import { Header } from "@/ui/site/header"
 
 // static nav
 import { FHS as nav } from '@/fixtures/nav'
@@ -15,7 +15,7 @@ export default async function Page() {
 
 	return (
 		<>
-			<EventsBar />
+			<EventsBar site={'/'} />
 
 			<Header site={`/`} mainMenu={nav.data.entries} />
 

@@ -1,0 +1,25 @@
+.layout {
+    background-color: hsl(from var(--bg) h s calc(l - 3) / 1);
+    border-radius: calc(var(--ui-radius) * 1);
+    padding: var(--space-xxs);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap:var(--space-xs);
+    align-items: flex-start;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:var(--space-xxs);
+    padding-bottom:var(--space-xxs);
+}
+
+.avatar {
+    background-color: hsl(from var(--bg) h s calc(l - 8) / 1);
+    border-radius: calc(var(--ui-radius) * 0.5);
+    overflow: hidden;
+    aspect-ratio: 1;
+}

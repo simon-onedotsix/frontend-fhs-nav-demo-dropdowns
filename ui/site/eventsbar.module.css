@@ -38,7 +38,7 @@
 
     .content {
         display: flex;
-        row-gap: .75rem;
+        gap: .75rem;
         flex-wrap: wrap;
     }
 }
@@ -55,6 +55,10 @@
     }
     .toggle {
         display: none;
+    }
+    .content {
+        display: flex;
+        gap: .75rem;
     }
 }
 @media(min-width: 1460px){

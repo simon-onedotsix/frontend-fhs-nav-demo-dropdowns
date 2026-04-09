@@ -1,0 +1,43 @@
+/* session */
+
+.wrapper {
+    background-color: hsl(from var(--bg) h s calc(l - 5) / 1);
+    border-radius: calc(var(--ui-radius) * 0.5);
+    overflow: hidden;
+}
+
+.header {
+    background-color: hsl(from var(--bg) h s calc(l + 10) / 1);
+    padding: var(--space-xxs) var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    flex-wrap: wrap;
+}
+
+.content {
+    padding: var(--space-xs);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xxs);
+}
+
+
+
+/* speaker grid */
+
+.speakerGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xxs);
+}
+
+
+
+/* speaker card */
+
+.speakerCard {
+    background-color: hsl(from var(--bg) h s calc(l + 0.5) / 1);
+    border-radius: calc(var(--ui-radius) * 0.25);
+    padding: var(--space-xxs);
+}

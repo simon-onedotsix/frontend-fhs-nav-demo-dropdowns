@@ -1,4 +1,4 @@
-import { Section } from "@/ui/section"
+import { Section } from "@/ui/layout/section"
 
 import '../page.css'
 

@@ -116,7 +116,7 @@
 
     .mainMenu ul a,
     .mainMenu p,
-    .mainMenu span {
+    .mainMenu .title {
         display: inline-block;
         padding: .5rem 0;
     }
@@ -273,7 +273,7 @@
     
     .mainMenu ul a,
     .mainMenu p,
-    .mainMenu span {
+    .mainMenu .title {
         display: inline-block;
         padding: 5px 10px;
         border-radius: .25rem;
