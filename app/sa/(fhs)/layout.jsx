@@ -4,7 +4,7 @@ import fetchNavigation from '@/lib/cms/fetchNavigation'
 import { EventsBar } from "@/ui/site/eventsbar"
 import { Header } from "@/ui/site/header"
 
-import '../page.css'
+import './page.css'
 
 // static nav
 import { FHS_SA as header } from '@/fixtures/nav'

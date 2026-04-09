@@ -1,30 +1,24 @@
 import fetchNavigation from '@/lib/cms/fetchNavigation'
 
-
 import { EventsBar } from "@/ui/site/eventsbar"
 import { Header } from "@/ui/site/header"
 import { Section } from "@/ui/layout/section"
 
-import '../page.css'
+import './page.css'
 
-
-// static nav
-import { FHS_WORLD as header } from '@/fixtures/nav'
-
-
+import { FHS_EGYPT as header } from '@/fixtures/nav'
 
 export default async function Layout({ children }) {
 
-	// const header = await fetchNavigation("fhsWorld")
-	// console.log('nav:', header)
-	
+	// const header = await fetchNavigation("fhsEgypt")
+
 	return (
 		<>
-			<EventsBar site={`/world`} />
+			<EventsBar site={`/egypt`} />
 			
 			<Header
-				site={`/world`}
-				handle={`World`}
+				site={`/egypt`}
+				handle={`Egypt`}
 				mainMenu={header.data.mainMenu}
 				ctas={header.data.event.headerCtas}
 			/>

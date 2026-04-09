@@ -1,32 +1,35 @@
 import fetchNavigation from '@/lib/cms/fetchNavigation'
 
+
 import { EventsBar } from "@/ui/site/eventsbar"
 import { Header } from "@/ui/site/header"
 import { Section } from "@/ui/layout/section"
 
 import './page.css'
 
-import { FHS_EGYPT as header } from '@/fixtures/nav'
 
-export default async function Page() {
+// static nav
+import { FHS_WORLD as header } from '@/fixtures/nav'
 
-	// const header = await fetchNavigation("fhsEgypt")
-	// console.log('header:', header)
+
+
+export default async function Layout({ children }) {
+
+	// const header = await fetchNavigation("fhsWorld")
+	// console.log('nav:', header)
 	
 	return (
 		<>
-			<EventsBar site={`/egypt`} />
+			<EventsBar site={`/world`} />
 			
 			<Header
-				site={`/egypt`}
-				handle={`Egypt`}
+				site={`/world`}
+				handle={`World`}
 				mainMenu={header.data.mainMenu}
 				ctas={header.data.event.headerCtas}
 			/>
 			
-			<Section>
-				<p className="h5 fw-400">Home page</p>
-			</Section>
+			{children}
 		</>
 	)
 }
